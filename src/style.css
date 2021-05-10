@@ -64,6 +64,8 @@ body {
   justify-content: center;
 }
 
+/* Icons */
+
 .icons {
   position: absolute;
   top: 572px;
@@ -73,6 +75,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.icon.poop-icon {
+  margin-top: 8px;
+}
+
+.icon.weather-icon {
+  margin-top: 8px;
 }
 
 /* Poop */
