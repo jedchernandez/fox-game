@@ -1,12 +1,28 @@
 {
   "name": "fox-game",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
+    "format:check": "prettier --ignore-path ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
+    "lint": "eslint --ignore-path ./.gitignore --fix \"./**/*.{js,ts}\"",
+    "lint:check": "eslint --ignore-path ./.gitignore --quiet \"./**/*.{js,ts}\"",
+    "dev": "parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^2.3.0"
+  },
+  "dependencies": {},
+  "description": "",
+  "browserslist": [
+    "last 2 Chrome versions"
+  ]
 }
