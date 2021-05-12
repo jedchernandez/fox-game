@@ -7,9 +7,9 @@
     "format:check": "prettier --ignore-path ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
     "lint": "eslint --ignore-path ./.gitignore --fix \"./**/*.{js,ts}\"",
     "lint:check": "eslint --ignore-path ./.gitignore --quiet \"./**/*.{js,ts}\"",
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public url ./",
-    "deploy": "rm -rf dist/ && npm run build && gh-pages -d dist",
+    "start": "parcel src/index.html",
+    "build": "rm -rf dist/ && parcel build src/index.html --public url ./https://jedchernandez.github.io/fox-game/",
+    "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -22,7 +22,9 @@
     "parcel-bundler": "^1.12.5",
     "prettier": "^2.3.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  },
   "description": "",
   "browserslist": [
     "last 2 Chrome versions"
