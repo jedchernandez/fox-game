@@ -1,4 +1,4 @@
-import { modFox, modScene, togglePoopBag } from "./ui";
+import { modFox, modScene, togglePoopBag, writeModal } from "./ui";
 import {
   RAIN_CHANCE,
   SCENES,
@@ -48,6 +48,7 @@ const gameState = {
     this.wakeTime = this.clock + 3;
     modFox("egg");
     modScene("day");
+    writeModal();
   },
 
   wake() {
@@ -66,7 +67,18 @@ const gameState = {
     this.state = "SLEEP";
     modFox("sleep");
     modScene("night");
+    this.clearTimes();
     this.wakeTime = this.clock + NIGHT_LENGTH;
+  },
+
+  clearTimes() {
+    this.wakeTime = -1;
+    this.sleepTime = -1;
+    this.hungryTime = -1;
+    this.dieTime = -1;
+    this.poopTime = -1;
+    this.timeToStartCelebrating = -1;
+    this.timetoEndCelebrating = -1;
   },
 
   getHungry() {
@@ -86,6 +98,11 @@ const gameState = {
 
   die() {
     console.log("died");
+    this.current = "DEAD";
+    modScene("dead");
+    modFox("dead");
+    this.clearTimes();
+    writeModal("The fox died :( <br/> Press the middle button to restart");
   },
 
   startCelebrating() {
